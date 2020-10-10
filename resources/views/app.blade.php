@@ -33,12 +33,12 @@
                 @csrf
 
                 <div class="form-group">
-                  <label for="">judul</label>
+                  <label for="">Judul</label>
                   <input type="text" class="form-control" name="judul" value="{{ old('judul') }}">
                 </div>
                 <div class="form-group">
                   <label for="">Tanggal Rilis</label>
-                  <input type="text" class="form-control" name="tgl_rilis" value="{{ old('tgl_rilis') }}">
+                  <input type="date" class="form-control" name="tgl_rilis" value="{{ old('tgl_rilis') }}">
                 </div>
                 <button class="btn btn-primary">Simpan</button>
               </form>

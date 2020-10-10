@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Anime;
 use Illuminate\Http\Request;
 
 class AppController extends Controller
@@ -13,7 +14,8 @@ class AppController extends Controller
      */
     public function index()
     {
-        //
+        $data['anime'] = Anime::all();
+        return view('app', $data);
     }
 
     /**
@@ -34,7 +36,15 @@ class AppController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'judul' => 'required',
+            'tgl_rilis' => 'required',
+        ],
+        ['required' => ':attribute harus diisi']);
+
+        Anime::create($request->all());
+
+        return redirect()->route('anime.index')->with('success', 'Data anime tersimpan');
     }
 
     /**
