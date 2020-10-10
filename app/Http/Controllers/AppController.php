@@ -66,7 +66,8 @@ class AppController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['anime'] = Anime::find($id);
+        return view('edit', $data);
     }
 
     /**
@@ -78,7 +79,17 @@ class AppController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data['anime'] = Anime::find($id);
+
+        $request->validate([
+            'judul' => 'required',
+            'tgl_rilis' => 'required',
+        ],
+        ['required' => ':attribute harus diisi']);
+
+        $data['anime']->update($request->all());
+
+        return redirect()->route('anime.index')->with('success', 'Data Anime terubah');
     }
 
     /**
