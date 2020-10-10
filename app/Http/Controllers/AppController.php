@@ -44,7 +44,7 @@ class AppController extends Controller
 
         Anime::create($request->all());
 
-        return redirect()->route('anime.index')->with('success', 'Data anime tersimpan');
+        return redirect()->route('anime.index')->with('success', 'Data Anime tersimpan');
     }
 
     /**
@@ -89,6 +89,9 @@ class AppController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $users = Anime::find($id);
+        $users->delete();
+
+        return redirect()->route('anime.index')->with('success', 'Data Anime dihapus');
     }
 }
