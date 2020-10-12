@@ -39,6 +39,7 @@ class AppController extends Controller
         $request->validate([
             'judul' => 'required',
             'tgl_rilis' => 'required',
+            'studio' => 'required'
         ],
         ['required' => ':attribute harus diisi']);
 
@@ -84,6 +85,7 @@ class AppController extends Controller
         $request->validate([
             'judul' => 'required',
             'tgl_rilis' => 'required',
+            'studio' => 'required'
         ],
         ['required' => ':attribute harus diisi']);
 

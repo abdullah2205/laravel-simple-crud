@@ -40,6 +40,10 @@
                   <label for="">Tanggal Rilis</label>
                   <input type="date" class="form-control" name="tgl_rilis" value="{{ old('tgl_rilis') }}">
                 </div>
+                <div class="form-group">
+                  <label for="">Studio</label>
+                  <input type="text" class="form-control" name="studio" value="{{ old('studio') }}">
+                </div>
                 <button class="btn btn-primary">Simpan</button>
               </form>
             </div>
@@ -54,6 +58,7 @@
                 <tr>
                   <td>Judul</td>
                   <td>Tanggal Rilis</td>
+                  <td>Studio</td>
                   <td>Aksi</td>
                 </tr>
 
@@ -61,6 +66,7 @@
                   <tr>
                     <td>{{ $anime_row->judul }}</td>
                     <td>{{ $anime_row->tgl_rilis }}</td>
+                    <td>{{ $anime_row->studio }}</td>
                     <td>
                       <form action="{{ route('anime.destroy', $anime_row->id) }}" method="post">
                         <a href="{{ route('anime.edit', $anime_row->id) }}">

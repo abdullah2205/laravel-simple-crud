@@ -12,5 +12,6 @@ class Anime extends Model
     protected $fillable = [
         'judul',
         'tgl_rilis',
+        'studio'
     ];
 }
