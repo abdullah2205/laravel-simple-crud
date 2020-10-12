@@ -17,6 +17,7 @@ class CreateAnimesTable extends Migration
             $table->id();
             $table->string('judul');
             $table->date('tgl_rilis');
+            $table->string('studio');
             $table->timestamps();
         });
     }

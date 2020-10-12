@@ -41,6 +41,10 @@
                         <label for="">Tanggal Rilis</label>
                         <input type="text" class="form-control" name="tgl_rilis" value="{{ $anime->tgl_rilis }}">
                     </div>
+                    <div class="form-group">
+                        <label for="">Studio</label>
+                        <input type="text" class="form-control" name="studio" value="{{ old('studio') }}">
+                    </div>
                     <button class="btn btn-primary">Simpan</button>
                 </form>
             </div>
