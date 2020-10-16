@@ -43,7 +43,7 @@
                     </div>
                     <div class="form-group">
                         <label for="">Studio</label>
-                        <input type="text" class="form-control" name="studio" value="{{ old('studio') }}">
+                        <input type="text" class="form-control" name="studio" value="{{ $anime->studio }}">
                     </div>
                     <button class="btn btn-primary">Simpan</button>
                 </form>
